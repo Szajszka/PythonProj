@@ -1,0 +1,10 @@
+PYTHON WEB APP FOR CHECKING PRICES AND AVAILABILLITY OF GPUs
+
+---------------------------------------------------
+
+1. Web scraper - availabillity and price checker
+2. xls/txt handler for simplified database
+3. GUI
+4. xls price history chart tool (if possible)
+
+---------------------------------------------------
