@@ -14,15 +14,8 @@ def StringParser(string):
 
 
 class MyHTMLParser (HTMLParser):
-    def handle_start_tag(self, tag, attrs):
-        print("tag startowy: ", tag)
-
-    def handle_end_tab(self, tag):
-        print("tag koncowy: ", tag)
-
     def handle_data(self, data):
         if ("priceGross" in data):
-            print("Dane: ", data)
             li = StringParser(data)
             for word in li:
                 if word == "priceGross":
