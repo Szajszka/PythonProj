@@ -2,11 +2,8 @@ import requests
 from html.parser import HTMLParser
 import re
 
-url = "https://www.morele.net/karta-graficzna-gigabyte-geforce-rtx-3070-gaming-oc-8gb-gddr6-gv-n3070gaming-oc-8gd-5944660/"
 
-
-def crawler(url):
-    page = requests.get(url)
+def scrapper(url):
 
     def stringParser(string):
         tmp = re.sub(r'[=\n{}]+', "", string)
@@ -20,11 +17,12 @@ def crawler(url):
                 li = stringParser(data)
                 for word in li:
                     if word == "priceGross":
-                        print("Price is: ", li[li.index(word)+1])
+                        price = li[li.index(word)+1]
+                        # not great, always rouding down the price
+                        print("Price is: ", price[:-2])
 
     parser = MyHTMLParser()
-    parser.feed(page.text)
+    parser.feed(requests.get(url).text)
 
 
-crawler(url)  # later remove url variable in order to use crawler func with an input
-# rename stuff a bit
+# clean stuff up a bit
