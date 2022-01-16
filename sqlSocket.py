@@ -1,4 +1,5 @@
 import mysql.connector
+from datetime import datetime
 
 cnx = mysql.connector.connect(
     user='porownywarka',
@@ -11,5 +12,5 @@ mycursor.execute("SHOW TABLES")
 for table in mycursor:
     print(table)
 
-
+print(datetime.now().strftime("%Y/%m/%d %H:%M:%S"))
 cnx.close()
