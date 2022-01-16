@@ -8,6 +8,8 @@ cnx = mysql.connector.connect(
 
 mycursor = cnx.cursor()
 mycursor.execute("SHOW TABLES")
-for db in mycursor:
-    print(db)
+for table in mycursor:
+    print(table)
+
+
 cnx.close()
