@@ -17,9 +17,9 @@ def scrapper(url):
                 li = stringParser(data)
                 for word in li:
                     if word == "priceGross":
-                        price = li[li.index(word)+1]
-                        # not great, always rouding down the price
-                        print("Price is: ", price[:-2])
+                        price = "{:.2f}".format(
+                            float(li[li.index(word)+1])/100)
+                        print("Price is: ", price)
 
     parser = MyHTMLParser()
     parser.feed(requests.get(url).text)
