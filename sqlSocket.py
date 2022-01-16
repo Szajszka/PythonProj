@@ -1,5 +1,5 @@
-import mysql.connector
 from datetime import datetime
+import mysql.connector
 
 cnx = mysql.connector.connect(
     user='porownywarka',

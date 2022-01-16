@@ -1,5 +1,6 @@
-import requests
 from html.parser import HTMLParser
+from pickle import FALSE, TRUE
+import requests
 import re
 
 
@@ -23,6 +24,3 @@ def scrapper(url):
 
     parser = MyHTMLParser()
     parser.feed(requests.get(url).text)
-
-
-# clean stuff up a bit
