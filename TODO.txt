@@ -1,8 +1,8 @@
-PYTHON WEB APP FOR CHECKING PRICES AND AVAILABILLITY OF GPUs
+PYTHON WEB APP FOR CHECKING PRICES AND AVAILABILLITY OF GPUs // Useful libraries: Selenium, BeautifulSoap, Pandas
 
 ---------------------------------------------------
 
-1. Web scraper - availabillity and price checker // Useful libraries: Selenium, BeautifulSoap, Pandas
+1. Web scraper - availabillity and price checker // Requests, HTMLParser
 2. xls/txt handler for simplified database
 3. GUI
 4. xls price history chart tool (if possible)
