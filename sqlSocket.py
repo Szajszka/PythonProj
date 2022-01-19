@@ -14,8 +14,8 @@ def sqlInput(cardId, manufacturerId, price):
 
     now = datetime.now()
 
-    sql = "INSERT INTO kartygraf (data, id_karty, id_producenta, cena) VALUES (%s, %s, %s, %s)"
-    val = (now.strftime("%Y/%m/%d %H:%M:%S"),
+    sql = "INSERT INTO kartygraf (id, date, id_karty, id_producenta, cena) VALUES (%s, %s, %s, %s, %s)"
+    val = (0, now.strftime("%Y/%m/%d %H:%M:%S"),
            cardId, manufacturerId, price)
 
     mycursor.execute(sql, val)
@@ -45,13 +45,3 @@ def getTable():
         print(x)
 
     cnx.close()
-
-
-cnx = mysql.connector.connect(
-    user='porownywarka',
-    password='Zaq12wsx',
-    host='37.48.70.83',
-    database='szajszka')
-
-mycursor = cnx.cursor()
-mycursor.execute("DELETE FROM kartygraf")
