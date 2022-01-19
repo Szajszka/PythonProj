@@ -22,4 +22,4 @@ def scrapper(url):
 
     parser = MyHTMLParser()
     parser.feed(requests.get(url).text)
-    print(parser.price)
+    return parser.price
