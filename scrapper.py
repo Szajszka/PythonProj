@@ -1,5 +1,4 @@
 from html.parser import HTMLParser
-from pickle import FALSE, TRUE
 import requests
 import re
 
@@ -18,9 +17,9 @@ def scrapper(url):
                 li = stringParser(data)
                 for word in li:
                     if word == "priceGross":
-                        price = "{:.2f}".format(
+                        self.price = "{:.2f}".format(
                             float(li[li.index(word)+1])/100)
-                        print("Price is: ", price)
 
     parser = MyHTMLParser()
     parser.feed(requests.get(url).text)
+    print(parser.price)
