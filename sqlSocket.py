@@ -24,7 +24,7 @@ def sqlInput(cardId, manufacturerId, price):
     print(mycursor.rowcount, "row inserted via Python")
 
     cnx.close()
-
+#id, nazwa_modelu, link
 # Debugging purposes
 
 
