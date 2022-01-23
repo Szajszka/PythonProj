@@ -1,0 +1,26 @@
+Projekt na Algorytmy i Struktury Danych UKW - studia niestacjonarne. GPU price checker.
+
+Podział pracy:
+    -Bartosz Bachusz - stworzenie witryny do podglądania cen (https://cutt.ly/FIBL0bj), stworzenie bazy danych,
+    -Arkadiusz Prądziński - skrypty w Pythonie, obsługa wypełniania bazy.
+
+Opis działania wybranych funkcji skryptu w Pythonie:
+
+    -scrapper.py - funkcja scrapper służy do przetwarzania zawartości strony pobranej za pomocą biblioteki requests (można tu było użyć bibliotek typowo napisanych pod bycie web crawlerem,
+    takich jak Scrapy, czy Beautiful Soap, ale zdecydowałem, że lepiej będzie napisać prymitywnego spidera samemu, żeby nauczyć się ciegoś ciekawego, niż korzystać już z gotowych rozwiązań,
+    ale użyłem gotowego parsera, wyciągającego dane z div'ek). Wyciągam dane o cenie z pomocą pola priceGross, które służy na stronie do wyliczania leasingu na komponenty, która nie jest
+    dostępna gdy przedmiot jest niedostępny,
+
+    -stringParser - prosty parser usuwający ze stringa danych, który powstał w wyniku pobrania strony newline'y i rozbijający go na listę, której elementy są wyznaczane przez spacje w stringu,
+
+    -fileReader - otwiera plik zawierający w nowych liniach nazwę karty, URL, id producenta i id karty, wycina z niego newline'y i zwraca listę z zawartością pliku,
+
+    -sqlInput - używająć biblioteki myqsl-connector-python łączę się z bazą (w żaden sposób nie maskowałem danych bo zakładaliśmy odpalanie skryptu za pomocą taska lokalnie, możnaby było
+    zrobić to za pomocą cronJob'a, ale niestety na darmowym serwerze nie mamy dostępu do konsoli żebyśmy mogli zainstalować Pythona i potrzebne biblioteki). Potem za pomocą prostego
+    SQLa wstawiam potrzebne dane do tabeli,
+
+    -getTable - funkcja debugowa do wyświetlania w konsoli Pythona tabeli, do której wstawiam dane,
+
+    -main.py - używa listy zwróconej przez fileReader'a i z pomocą prostej pętli for inkrementującej co 4 (ilość danych w linii pliku urls.txt: nazwa karty, link, id producenta, id karty)
+    próbuje czy linia "sqlInput(url_list[i+3], url_list[i+2], scrapper(url_list[i+1]))" zwraca błąd (jeśli zwróci, wywołuje tę samą linię, tylko z ceną ustawioną na 0). Jeśli nie zwróci
+    błędu, wywołuje sqlInput z argumentami id karty, id producenta i ceną karty.
