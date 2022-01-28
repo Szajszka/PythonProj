@@ -1,7 +1,7 @@
 Projekt na Algorytmy i Struktury Danych UKW - studia niestacjonarne. GPU price checker.
 
 Podział pracy:
-    -Bartosz Bachusz - stworzenie witryny do podglądania cen (https://cutt.ly/FIBL0bj), stworzenie bazy danych,
+    -Bartosz Bachusz - stworzenie witryny do podglądania cen (https://cutt.ly/ZOpIFCg), stworzenie bazy danych,
     -Arkadiusz Prądziński - skrypty w Pythonie, obsługa wypełniania bazy.
 
 Opis działania wybranych funkcji skryptu w Pythonie:
