@@ -1,7 +1,7 @@
 Projekt na Algorytmy i Struktury Danych UKW - studia niestacjonarne. GPU price checker.
 
 Podział pracy:
-    -Bartosz Bachusz - stworzenie witryny do podglądania cen (https://cutt.ly/ZOpIFCg), stworzenie bazy danych,
+    -Bartosz Bachusz - stworzenie witryny do podglądania cen w PHP (https://cutt.ly/ZOpIFCg), stworzenie bazy danych SQL,
     -Arkadiusz Prądziński - skrypty w Pythonie, obsługa wypełniania bazy.
 
 Opis działania wybranych funkcji skryptu w Pythonie:
@@ -24,3 +24,13 @@ Opis działania wybranych funkcji skryptu w Pythonie:
     -main.py - używa listy zwróconej przez fileReader'a i z pomocą prostej pętli for inkrementującej co 4 (ilość danych w linii pliku urls.txt: nazwa karty, link, id producenta, id karty)
     próbuje czy linia "sqlInput(url_list[i+3], url_list[i+2], scrapper(url_list[i+1]))" zwraca błąd (jeśli zwróci, wywołuje tę samą linię, tylko z ceną ustawioną na 0). Jeśli nie zwróci
     błędu, wywołuje sqlInput z argumentami id karty, id producenta i ceną karty.
+
+Strona internetowa będąca interfejsem graficznym naszej porównywarki została napisana z użyciem PHP i CSS, odczytuje ona dane z bazy i wyświetla je w formie tabelki.
+Wybraliśmy taki rodzaj interfejsu, ponieważ dawał on nam prosty sposób na stworzenie bazy danych nie polegającej na pliku XLS, tylko czymś "poważniejszym". Proszę to potraktować
+jako bardzo uproszczony pełny projekt webowy z frontem w PHP, oraz Pythonowym backiem zajmującym się całą logiką. 
+
+Struktura bazy danych w SQL jest bardzo prosta i można ją podejrzeć tutaj:
+
+https://ibb.co/jHgvSTx
+https://ibb.co/5rRCrdW
+https://ibb.co/ZHMvwHf
