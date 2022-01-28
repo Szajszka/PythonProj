@@ -5,10 +5,10 @@ import mysql.connector
 def sqlInput(cardId, manufacturerId, price):
 
     cnx = mysql.connector.connect(
-        user='porownywarka',
-        password='Zaq12wsx',
-        host='37.48.70.83',
-        database='szajszka')
+        user='p578288_user',
+        password='Zaq12wsx!@#',
+        host='94.23.90.35',
+        database='p578288_karty')
 
     mycursor = cnx.cursor()
 
@@ -31,10 +31,10 @@ def sqlInput(cardId, manufacturerId, price):
 def getTable():
 
     cnx = mysql.connector.connect(
-        user='porownywarka',
-        password='Zaq12wsx',
-        host='37.48.70.83',
-        database='szajszka')
+        user='p578288_user',
+        password='Zaq12wsx!@#',
+        host='94.23.90.35',
+        database='p578288_karty')
 
     mycursor = cnx.cursor()
 
